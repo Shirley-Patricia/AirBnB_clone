@@ -31,8 +31,6 @@ class BaseModel:
         of __dict__ of the instance"""
 
         dict_BaseModel = {}
-        for key, value in self.__dict__.items():
-        dict_rectangle[key] = value
         dict_BaseModel["__class__"] = self.__class__.__name__
         dict_BaseModel["updated_at"] = self.updated_at
         dict_BaseModel["id"] = self.id
