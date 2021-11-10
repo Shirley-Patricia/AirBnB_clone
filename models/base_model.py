@@ -26,23 +26,18 @@ class BaseModel:
 
             Returns: A dictionary of values
 
-        '''
-        self.updated_at = datetime.now()
-        self.id = str(uuid4())
-        self.created_at = datetime.now()
+    '''
+        if kwargs:
+            for key, value in kwargs.items():
+                if key in ['created_at', 'update_at']:
+                    value = datetime.strptime(value, f)
+                if key != "__class__":
+                    setattr(self, key, value)
+        else:
+            self.updated_at = datetime.now()
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
 
-        if args is not None:
-            pass
-            if kwargs:
-                for key in kwargs:
-                        if key in ['created_at']:
-                            kwargs['created_at'] = datetime.strptime(kwargs['created_at'], f)
-                        if key in ['update:at']:
-                            kwargs['update:at'] = datetime.strptime(kwargs['update:at'], f)
-            else:
-                self.updated_at = datetime.now().isoformat()
-                self.id = str(uuid4())
-                self.created_at = datetime.now().isoformat()
 
     def __str__(self):
         """Returns a instance in a string representation"""
@@ -59,8 +54,8 @@ class BaseModel:
 
         dict_BaseModel = {}
         dict_BaseModel["__class__"] = self.__class__.__name__
-        dict_BaseModel["updated_at"] = self.updated_at
-        dict_BaseModel["created_at"] = self.created_at
+        dict_BaseModel["updated_at"] = self.updated_at.isoformat()
+        dict_BaseModel["created_at"] = self.created_at.isoformat()
         dict_BaseModel["id"] = self.id
 
         return dict_BaseModel
