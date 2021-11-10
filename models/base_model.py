@@ -6,6 +6,8 @@ Console Python, first part of the AirBnB project
 from datetime import datetime
 from uuid import uuid4
 
+f = '%Y-%m-%dT%H:%M:%S.%f'
+
 
 class BaseModel:
 
@@ -25,9 +27,22 @@ class BaseModel:
             Returns: A dictionary of values
 
         '''
-        self.updated_at = datetime.now().isoformat()
+        self.updated_at = datetime.now()
         self.id = str(uuid4())
-        self.created_at = datetime.now().isoformat()
+        self.created_at = datetime.now()
+
+        if args is not None:
+            pass
+            if kwargs:
+                for key in kwargs:
+                        if key in ['created_at']:
+                            kwargs['created_at'] = datetime.strptime(kwargs['created_at'], f)
+                        if key in ['update:at']:
+                            kwargs['update:at'] = datetime.strptime(kwargs['update:at'], f)
+            else:
+                self.updated_at = datetime.now().isoformat()
+                self.id = str(uuid4())
+                self.created_at = datetime.now().isoformat()
 
     def __str__(self):
         """Returns a instance in a string representation"""
