@@ -9,10 +9,10 @@ from uuid import uuid4
 
 class BaseModel:
 
-    def __init__(self, id, created_at, updated_at):
+    def __init__(self, *args, **kwargs):
+        self.updated_at = datetime.now().isoformat()
         self.id = str(uuid4())
         self.created_at = datetime.now().isoformat()
-        self.updated_at = datetime.now().isoformat()
 
     def __str__(self):
         """should print [<class name>] (<self.id>) <self.__dict__>"""
@@ -33,7 +33,7 @@ class BaseModel:
         dict_BaseModel = {}
         dict_BaseModel["__class__"] = self.__class__.__name__
         dict_BaseModel["updated_at"] = self.updated_at
-        dict_BaseModel["id"] = self.id
         dict_BaseModel["created_at"] = self.created_at
+        dict_BaseModel["id"] = self.id
 
         return dict_BaseModel
