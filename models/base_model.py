@@ -27,19 +27,19 @@ class BaseModel:
 
             Returns: A dictionary of values
         '''
-        if kwargs:
+
+        if len(kwargs) != 0:
             for key, value in kwargs.items():
-                if key in ['created_at', 'update_at']:
+                if key == "created_at" or key == "updated_at": 
                     value = datetime.strptime(value, f)
-                if key != "__class__":
-                    setattr(self, key, value)
-        else:
-            self.updated_at = datetime.now()
-            self.id = str(uuid4())
-            self.created_at = datetime.now()
-            storage.new(self)
+                #if key != "__class__":
+                    #setattr(self, key, value)
 
-
+        self.updated_at = datetime.now()
+        self.id = str(uuid4())
+        self.created_at = datetime.now()
+        storage.new(self)
+        
     def __str__(self):
         """Returns a instance in a string representation"""
 
@@ -48,7 +48,7 @@ class BaseModel:
     def save(self):
         """Assign update_at with the current datetime (that means: now) when this have any change"""
 
-        self.updated_at = datetime.now().isoformat()
+        self.updated_at = datetime.now()
         storage.save(self)
 
     def __setattr__(self, name, value):
@@ -57,9 +57,7 @@ class BaseModel:
     def to_dict(self):
         """Converts a instance into a dictionary format"""
 
-        dict_BaseModel = {}
-        for key in dict_BaseModel:
-            setattr(self, key, dict_BaseModel[key])
+        dict_BaseModel = self.__dict__.copy()
         dict_BaseModel["__class__"] = self.__class__.__name__
         dict_BaseModel["updated_at"] = self.updated_at.isoformat()
         dict_BaseModel["created_at"] = self.created_at.isoformat()
