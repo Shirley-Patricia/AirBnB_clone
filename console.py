@@ -8,6 +8,7 @@ class HBNBCommand(cmd.Cmd):
 
         # ----- basic commands -----
         def do_test(self, arg):
+                'Descripción de un test para python console'
                 print("Hola soy un test")
 
         def do_quit(self, arg):
@@ -16,6 +17,9 @@ class HBNBCommand(cmd.Cmd):
         def do_EOF(self, arg):
                 return True
 
+        def emptyline(self):
+                """No realiza ninguna accion"""
+                return False
 
 if __name__ == '__main__':
         HBNBCommand().cmdloop()
