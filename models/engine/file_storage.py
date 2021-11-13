@@ -2,6 +2,9 @@
 """
 Write a class FileStorage
 """
+import json
+from os.path import exists
+from models.base_model import BaseModel
 
 
 class FileStorage:
@@ -10,7 +13,7 @@ class FileStorage:
     deserializes JSON file to instances
     """
 
-    __file_path = 
+    __file_path = "file.json"
     __objects = {}
 
     def all(self):
@@ -23,7 +26,9 @@ class FileStorage:
         """
         sets in __objects the obj with key <obj class name>.id
         """
-        FileStorage.__objects = obj.__class__.__name__.id
+        name = obj.__class__.__name__
+        identifier = obj.id
+        FileStorage.__objects[name + "." + identifier] = obj
 
     def save(self):
         """
@@ -32,10 +37,16 @@ class FileStorage:
         to_json = {}
         for key, value in FileStorage.__objects.items():
             to_json[key] = value.to_dict()
-        with open(__file_path, 'w') as file:
-            json.dump(FileStorage.__objects, file)
+        with open(FileStorage.__file_path, 'w') as file:
+            json.dump(to_json, file)
 
     def reload(self):
-        if __file_path:
-            with open(__file_path, 'r') as file:
-                return json.load(file)
+        if exists(self.__file_path):
+            try:
+                with open(FileStorage.__file_path, 'r') as file:
+                    dict_obj = json.load(file)
+                for key, value in dict_obj.items():
+                    FileStorage.__objects[key] = eval(f'{value["__class__"]}(**value)')
+
+            except Exception:
+                pass
