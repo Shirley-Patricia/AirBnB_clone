@@ -16,7 +16,7 @@ lists = ["BaseModel", "User", "Amenity", "Place", "City", "Review"]
 
 class HBNBCommand(cmd.Cmd):
     intro = 'Welcome! Python Console here. Type help or ? to commands.\n'
-    prompt = '(hbnb)'
+    prompt = '(hbnb) '
 
     def do_quit(self, arg):
         'Quit command to exit the console'
