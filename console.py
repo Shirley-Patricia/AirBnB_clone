@@ -29,7 +29,7 @@ class HBNBCommand(cmd.Cmd):
 
     def emptyline(self):
         """Do not perform any action"""
-        pass
+        return False
 
     def do_create(self, arg):
         """
