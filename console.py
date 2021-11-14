@@ -18,43 +18,36 @@ class HBNBCommand(cmd.Cmd):
     intro = 'Welcome! Python Console here. Type help or ? to commands.\n'
     prompt = '(hbnb)'
 
-    # ----- basic commands -----
-    def do_test(self, arg):
-        'Descripción de un test para python console'
-        print("Hola soy un test")
-
     def do_quit(self, arg):
-        'Command to exit the console'
+        'Quit command to exit the console'
         return True
 
     def do_EOF(self, arg):
-        'Command -shortcut: ctrl + D- to exit the console'
+        'EOF command -shortcut: ctrl + D- to exit the console'
         return True
 
     def emptyline(self):
-        """No realiza ninguna accion"""
+        """Do not perform any action"""
         return False
 
     def do_create(self, arg):
         """
-            Creates a new instance of BaseModel, saves it (to the JSON file)
-            and prints the id
+        Creates a new instance of BaseModel, saves it (to the JSON file)
+        and prints the id
         """
         if not arg:
             print("** class name missing **")
         elif arg not in lists:
             print("** class doesn't exist **")
-        # elif arg in lists:
-        #         print("** class already exists **")
         else:
             my_model = eval(arg + "()")
             my_model.save()
             print(my_model.id)
 
     def do_show(self, arg):
-        """Prints a string representation
-        of an instance based on the class
-        name and id
+        """
+        Prints a string representation of an instance based
+        on the class name and id
         """
         if not arg:
             print("** class name missing **")
@@ -75,7 +68,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, arg):
 
-        """Deletes an instance based on the class name and id
+        """
+        Deletes an instance based on the class name and id
         (save the change into the JSON file)
         """
 
