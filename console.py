@@ -15,17 +15,7 @@ lists = ["BaseModel", "User", "Amenity", "Place", "City", "Review"]
 
 
 class HBNBCommand(cmd.Cmd):
-<<<<<<< HEAD
-    prompt = '(hbnb)'
-
-    # ----- basic commands -----
-    def do_test(self, arg):
-        'Descripción de un test para python console'
-        print("Hola soy un test")
-=======
-    intro = 'Welcome! Python Console here. Type help or ? to commands.\n'
     prompt = '(hbnb) '
->>>>>>> 03d7783efdb89b964822c34ee58ab75bad8ccea1
 
     def do_quit(self, arg):
         'Quit command to exit the console'
@@ -77,13 +67,9 @@ class HBNBCommand(cmd.Cmd):
                         print("** no instance found **")
 
     def do_destroy(self, arg):
-<<<<<<< HEAD
-        """Deletes an instance based on the class name and id
-=======
 
         """
         Deletes an instance based on the class name and id
->>>>>>> 03d7783efdb89b964822c34ee58ab75bad8ccea1
         (save the change into the JSON file)
         """
 
