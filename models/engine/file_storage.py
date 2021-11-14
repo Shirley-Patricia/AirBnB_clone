@@ -5,7 +5,11 @@ Write a class FileStorage
 import json
 from os.path import exists
 from models.base_model import BaseModel
-
+from models.user import User
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
 
 class FileStorage:
     """
@@ -45,8 +49,8 @@ class FileStorage:
             try:
                 with open(FileStorage.__file_path, 'r') as file:
                     dict_obj = json.load(file)
-                for key, value in dict_obj.items():
-                    FileStorage.__objects[key] = eval(f'{value["__class__"]}(**value)')
+                for k, v in dict_obj.items():
+                    self.__objects[k] = eval(f'{v["__class__"]}(**v)')
 
             except Exception:
                 pass

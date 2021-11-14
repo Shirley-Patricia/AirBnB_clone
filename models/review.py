@@ -2,6 +2,7 @@
 """
 Creating of class Review that inherit from BaseModel
 """
+from models.base_model import BaseModel
 
 
 class Review(BaseModel):
