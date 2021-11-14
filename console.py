@@ -11,7 +11,7 @@ from models.city import City
 from models.place import Place
 from models.review import Review
 
-lists = ["BaseModel"]
+lists = ["BaseModel", "User", "Amenity", "Place", "City", "Review"]
 
 
 class HBNBCommand(cmd.Cmd):
@@ -89,6 +89,27 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()
             else:
                 print("** no instance found **")
+
+    def do_all(self, arg):
+        """
+        Prints all string representation of all instances based 
+        or not on the class name.
+        """
+
+        list_str = []
+        line = arg.split()
+        if not arg:
+            for key,value in storage.all().items():
+                list_str.append(value)
+            print(list_str)
+        elif line[0] not in lists:
+            print("** class doesn't exist **")
+        else:
+            for key, value in storage.all().items():
+                k = key.split(sep='.')
+                if line[0] == k[0]:
+                    list_str.append(value)
+            print(list_str)
 
 
 if __name__ == '__main__':
