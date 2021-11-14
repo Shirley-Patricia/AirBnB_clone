@@ -15,7 +15,6 @@ lists = ["BaseModel"]
 
 
 class HBNBCommand(cmd.Cmd):
-    intro = 'Welcome! Python Console here. Type help or ? to commands.\n'
     prompt = '(hbnb)'
 
     # ----- basic commands -----
@@ -73,7 +72,6 @@ class HBNBCommand(cmd.Cmd):
                         print("** no instance found **")
 
     def do_destroy(self, arg):
-
         """Deletes an instance based on the class name and id
         (save the change into the JSON file)
         """
