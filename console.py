@@ -17,19 +17,24 @@ class HBNBCommand(cmd.Cmd):
 
         # ----- basic commands -----
         def do_test(self, arg):
+                'Descripción de un test para python console'
                 print("Hola soy un test")
 
         def do_quit(self, arg):
-                """Command to exit the program"""
+                'Command to exit the console'
                 return True
 
         def do_EOF(self, arg):
-                """Command to exit the program"""
+                'Command -shortcut: ctrl + D- to exit the console'
                 return True
-        
+
+        def emptyline(self):
+                """No realiza ninguna accion"""
+                return False
+
         def do_create(self, arg):
                 """
-                
+
                 """
                 if not arg:
                         print("** class name missing **")
