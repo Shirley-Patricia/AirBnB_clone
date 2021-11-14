@@ -24,6 +24,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, arg):
         'EOF command -shortcut: ctrl + D- to exit the console'
+        print("")
         return True
 
     def emptyline(self):
