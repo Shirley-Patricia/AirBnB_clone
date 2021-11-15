@@ -30,7 +30,7 @@ PD: First, you need to have downloaded and cloned the repository and entered the
 - All your functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
 - A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
 
-### Python Unit Tests   
+### Python Unit Tests
 - All your test files should be inside a folder tests
 - You have to use the unittest module
 - All your test files should be python files (extension: .py)
@@ -41,24 +41,43 @@ PD: First, you need to have downloaded and cloned the repository and entered the
 - All your classes should have a documentation (python3 -c 'print(__import__("my_module").MyClass.__doc__)')
 - All your functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
 
-## List of allowed functions and system calls:
+## List of commands enabled:
 
 > create
+
 Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id
 
 > show
+
 Prints the string representation of an instance based on the class name and id
 
 > destroy
+
 Deletes an instance based on the class name and id (save the change into the JSON file)
 
 > all
+
 Prints all string representation of all instances based or not on the class name
 
 
 
 
-# Table of Contents
+Table of Contents
+=================
+
+* [AirBnB_clone](#airbnb_clone)
+* [Features](#features)
+      * [Python Scripts](#python-scripts)
+      * [Python Unit Tests](#python-unit-tests)
+   * [List of commands enabled:](#list-of-commands-enabled)
+* [Table of Contents](#table-of-contents)
+   * [Output](#output)
+   * [Installation and Execution:](#installation-and-execution)
+   * [Tests](#tests)
+      * [Contribuitors](#contribuitors)
+      * [Languages and Tools:](#languages-and-tools)
+            * [Thanks for your attention, feel free to contribute to the project or contact us if you need something](#thanks-for-your-attention-feel-free-to-contribute-to-the-project-or-contact-us-if-you-need-something)
+      * [End](#end)
 =================
 
 ================================================================
