@@ -13,14 +13,15 @@ To see help file, just type:
 
 > ./help
 
-PD: First, you need to have downloaded and cloned the repository and entered the repository folder, in case you don't know how, you can click here: [Installation:](#installation)
+PD: First, you need to have downloaded and cloned the repository and entered the repository folder, in case you don't know how, you can click here: [Installation:](#installation-and-execution)
 
 # Features
 
 - Write beautiful code that passes the PEP8 checks.
 - All your files should end with a new line
-- All your files, classes, functions must be tested with unit tests. Unit tests must also pass in non-interactive mode (check non-interactive apart)    All your files   
-### Python Scripts 
+- All your files, classes, functions must be tested with unit tests. Unit tests must also pass in non-interactive mode (check non-interactive apart)
+
+## Python Scripts
 - will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
 - The first line of all your files should be exactly #!/usr/bin/python3
 - Your code should use the pycodestyle (version 2.7.*)
@@ -30,7 +31,7 @@ PD: First, you need to have downloaded and cloned the repository and entered the
 - All your functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
 - A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
 
-### Python Unit Tests
+## Python Unit Tests
 - All your test files should be inside a folder tests
 - You have to use the unittest module
 - All your test files should be python files (extension: .py)
@@ -67,8 +68,8 @@ Table of Contents
 
 * [AirBnB_clone](#airbnb_clone)
 * [Features](#features)
-      * [Python Scripts](#python-scripts)
-      * [Python Unit Tests](#python-unit-tests)
+   * [Python Scripts](#python-scripts)
+   * [Python Unit Tests](#python-unit-tests)
    * [List of commands enabled:](#list-of-commands-enabled)
 * [Table of Contents](#table-of-contents)
    * [Output](#output)
