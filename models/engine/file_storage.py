@@ -11,6 +11,7 @@ from models.city import City
 from models.place import Place
 from models.review import Review
 
+
 class FileStorage:
     """
     This class serializes instances to a JSON file and
