@@ -2,8 +2,10 @@
 """Testing BaseModel"""
 
 import unittest
-from models.base_model import BaseModel
 import pycodestyle
+import datetime
+from models.base_model import BaseModel
+
 
 
 class TestBaseModel(unittest.TestCase):
@@ -19,15 +21,19 @@ class TestBaseModel(unittest.TestCase):
         basemodel = BaseModel()
         basemodel.save()
         self.assertNotEqual(basemodel.created_at, basemodel.updated_at)
+    
+    def test_to_dict(self):
+        basemodel = BaseModel()
+        self.assertIs(type(basemodel.to_dict()), dict)
+        self.assertIs(type(basemodel.updated_at), datetime.datetime)
+        self.assertIs(type(basemodel.id), str)
+        self.assertIs(type(basemodel.created_at), datetime.datetime)
 
     def test_doc(self):
         """ Tests doc """
         self.assertIsNotNone(BaseModel.__doc__)
 
-    def test_to_json(self):
-        '''test to jason'''
-
-    def test_kwarg(self):
+    def test_dictionary(self):
         basemodel = BaseModel()
         self.assertEqual(type(basemodel).__name__, "BaseModel")
         self.assertTrue(hasattr(basemodel, "id"))
