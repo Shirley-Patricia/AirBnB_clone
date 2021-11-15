@@ -10,8 +10,9 @@ from models.amenity import Amenity
 from models.city import City
 from models.place import Place
 from models.review import Review
+from models.state import State
 
-lists = ["BaseModel", "User", "Amenity", "Place", "City", "Review"]
+lists = ["BaseModel", "User", "Amenity", "Place", "City", "Review", "State"]
 
 
 class HBNBCommand(cmd.Cmd):
