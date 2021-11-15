@@ -7,7 +7,6 @@ import datetime
 from models.base_model import BaseModel
 
 
-
 class TestBaseModel(unittest.TestCase):
     """BaseModel Test"""
 
@@ -27,7 +26,7 @@ class TestBaseModel(unittest.TestCase):
         basemodel = BaseModel()
         basemodel.save()
         self.assertNotEqual(basemodel.created_at, basemodel.updated_at)
-    
+
     def test_to_dict(self):
         """testing to_dict method"""
         basemodel = BaseModel()
@@ -39,7 +38,7 @@ class TestBaseModel(unittest.TestCase):
     def test_doc(self):
         """Tests doc """
         self.assertIsNotNone(BaseModel.__doc__)
-    
+
     def test_many_instances(self):
         """Testing attributes of instances"""
         basemodel1 = BaseModel()

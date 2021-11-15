@@ -9,7 +9,6 @@ from models import place
 from models.base_model import BaseModel
 
 
-
 class TestPlace(unittest.TestCase):
     """
     """

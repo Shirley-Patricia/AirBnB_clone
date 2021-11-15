@@ -9,7 +9,6 @@ from models import review
 from models.base_model import BaseModel
 
 
-
 class TestReview(unittest.TestCase):
     """
     """
