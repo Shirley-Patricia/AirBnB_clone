@@ -1,6 +1,6 @@
 # AirBnB_clone
 
-![]
+![https://github.com/Ele4327/AirBnB_clone/blob/main/resources/Python-Console.jpg]
 
 👋 Hello Devs
 
@@ -91,11 +91,11 @@ Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
 
-(hbnb) 
+(hbnb)
 (hbnb) help quit
 Quit command to exit the program
 
-(hbnb) 
+(hbnb)
 (hbnb) create BaseModel
 (hbnb) e768e12b-5953-44fe-82b7-b73530190881
 (hbnb) all
@@ -127,7 +127,7 @@ And that´s it, u are already using seeing the propmt and using the console
 
 Your shell should work like this in interactive mode:
 
-```  
+```
 python3 -m unittest discover tests
 ...................................................................................
 ...................................................................................
@@ -137,7 +137,7 @@ Ran 189 tests in 13.135s
 
 OK
 ```
-  
+
 But also in non-interactive mode:
 
 ```
@@ -152,10 +152,10 @@ OK
 ```
 <h3 align="left">Contribuitors</h3>
 <p align="left">
-<a href="" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="" height="30" width="40" /></a>
+<a href="" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="" height="30" width="40" />Shirley Carcamo</a>
 </p>
 <p align="left">
-<a href="" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="" height="30" width="40" /></a>
+<a href="https://twitter.com/@jarold42885411" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="" height="30" width="40" />Jarold Hakins</a>
 </p>
 <p align="left">
 <a href="https://twitter.com/@ele5438" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="" height="30" width="40" />Sebastian Garzón</a>
