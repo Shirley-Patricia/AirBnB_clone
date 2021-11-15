@@ -1,6 +1,6 @@
 # AirBnB_clone
 
-![https://github.com/Ele4327/AirBnB_clone/blob/main/resources/Python-Console.jpg]
+![](https://github.com/Ele4327/AirBnB_clone/blob/main/resources/Python-Console.jpg)
 
 👋 Hello Devs
 
