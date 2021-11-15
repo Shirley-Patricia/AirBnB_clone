@@ -1,68 +1,39 @@
 #!/usr/bin/python3
-"""
-Instantiating BaseModel.
-"""
+"""Testing BaseModel"""
+
 import unittest
 from models.base_model import BaseModel
 import pycodestyle
 
 
 class TestBaseModel(unittest.TestCase):
-    """
-    Starting Test.
-    """
-    def test_is_an_instance(self):
-        """
-        Instantiating BaseModels
-        """
-        my_BaseModel = BaseModel()
-        self.assertIsInstance(my_BaseModel, BaseModel)
+    """BaseModel Test"""
 
-    def test_attributes(self):
-        """
-        Check if the class had corrects attributes
-        """
-        self.assertTrue(hasattr(BaseModel, "__init__"))
-        self.assertTrue(hasattr(BaseModel, "__str__"))
-        self.assertTrue(hasattr(BaseModel, "save"))
-        self.assertTrue(hasattr(BaseModel, "to_dict"))
+    def test_pycodestyle_BaseModel(self):
+        """Testing for pycodestyle"""
+        style = pycodestyle.StyleGuide(quiet=True)
+        p = style.check_files(['models/base_model.py'])
+        self.assertEqual(p.total_errors, 0, "Check pycodestyle")
 
-    def test_id(self):
-        """
-        Check if the class had unique id's
-        """
-        my_BaseModel = BaseModel().id
-        my_1BaseModel = BaseModel().id
-        self.assertNotEqual(my_BaseModel, my_1BaseModel)
+    def test_save_baseModel(self):
+        basemodel = BaseModel()
+        basemodel.save()
+        self.assertNotEqual(basemodel.created_at, basemodel.updated_at)
 
-    def test_save(self):
-        """
-        Check if the class save the update the date
-        """
-        my_BaseModel = BaseModel()
-        my_1BaseModel = my_BaseModel.updated_at
-        my_BaseModel.save()
-        my_2BaseModel = my_BaseModel.updated_at
-        self.assertNotEqual(my_1BaseModel, my_2BaseModel)
+    def test_doc(self):
+        """ Tests doc """
+        self.assertIsNotNone(BaseModel.__doc__)
 
-    def test_to_dict(self):
-        """
-        Test to dict
-        """
-        my_BaseModel = BaseModel()
-        my_dict = my_BaseModel.to_dict()
-        self.assertIs(type(my_dict), dict)
-        self.assertIs(type(my_dict['created_at']), str)
-        self.assertIs(type(my_dict['updated_at']), str)
+    def test_to_json(self):
+        '''test to jason'''
 
-    def test_style(self):
-        """
-        Check if the file had correct style
-        """
-        pstyle = pycodestyle.StyleGuide(quiet=True)
-        result = pstyle.check_files(['models/base_model.py'])
-        self.assertEqual(result.total_errors, 0,
-                         "Found code style errors.")
+    def test_kwarg(self):
+        basemodel = BaseModel()
+        self.assertEqual(type(basemodel).__name__, "BaseModel")
+        self.assertTrue(hasattr(basemodel, "id"))
+        self.assertTrue(hasattr(basemodel, "created_at"))
+        self.assertTrue(hasattr(basemodel, "updated_at"))
+        self.assertTrue(hasattr(basemodel, "__class__"))
 
 
 if __name__ == '__main__':
