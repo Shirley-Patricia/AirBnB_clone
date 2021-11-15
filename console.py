@@ -45,62 +45,61 @@ class HBNBCommand(cmd.Cmd):
             print(my_model.id)
 
     def do_show(self, arg):
-        """
-        Prints a string representation of an instance based
+        """Prints a string representation of an instance based
         on the class name and id
         """
+        k = ""
         if not arg:
-            print("** class name missing **")
+                print("** class name missing **")
         else:
             args = arg.split()
-            k = f'{args[0]}.{args[1]}'
+            if len(args) > 1:
+                k = f'{args[0]}.{args[1]}'
             if args[0] not in lists:
                 print("** class doesn't exist **")
-            elif args[0] in lists and len(args) != 2:
+            elif args[0] in lists and len(args) < 2:
                 print("** instance id missing **")
             else:
                 for key, value in storage.all().items():
                     if key == k:
                         print(value)
                         return
-                    else:
-                        print("** no instance found **")
+                else:
+                    print("** no instance found **")
 
     def do_destroy(self, arg):
-
-        """
-        Deletes an instance based on the class name and id
+        """Deletes an instance based on the class name and id
         (save the change into the JSON file)
         """
-
+        k = ""
         if not arg:
             print("** class name missing **")
         else:
             line = arg.split()
             obj = storage.all()
-            key = f'{line[0]}.{line[1]}'
-
+            if len(line) > 1:
+                k = f'{line[0]}.{line[1]}'
             if line[0] not in lists:
                 print("** class doesn't exist **")
-            elif line[0] in lists and len(line) != 2:
+            elif line[0] in lists and len(line) < 2:
                 print("** instance id missing **")
-            elif key in obj:
-                del obj[key]
+            elif k in obj:
+                del obj[k]
                 storage.save()
             else:
                 print("** no instance found **")
 
     def do_all(self, arg):
         """
-        Prints all string representation of all instances based 
+        Prints all string representation of all instances based
         or not on the class name.
         """
 
         list_str = []
         line = arg.split()
         if not arg:
-            for key,value in storage.all().items():
-                list_str.append(value)
+            for key, value in storage.all().items():
+                list_str.append(value.__str__())
             print(list_str)
         elif line[0] not in lists:
             print("** class doesn't exist **")
@@ -108,7 +107,7 @@ class HBNBCommand(cmd.Cmd):
             for key, value in storage.all().items():
                 k = key.split(sep='.')
                 if line[0] == k[0]:
-                    list_str.append(value)
+                    list_str.append(value.__str__())
             print(list_str)
 
 
