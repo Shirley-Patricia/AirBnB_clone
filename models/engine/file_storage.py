@@ -14,8 +14,8 @@ from models.review import Review
 
 class FileStorage:
     """
-    This class serializes instances to a JSON file and
-    deserializes JSON file to instances
+        This class serializes instances to a JSON file and
+        deserializes JSON file to instances
     """
 
     __file_path = "file.json"
@@ -23,13 +23,13 @@ class FileStorage:
 
     def all(self):
         """
-        returns the dictionary __objects
+            returns the dictionary __objects
         """
         return FileStorage.__objects
 
     def new(self, obj):
         """
-        sets in __objects the obj with key <obj class name>.id
+            sets in __objects the obj with key <obj class name>.id
         """
         name = obj.__class__.__name__
         identifier = obj.id
@@ -37,7 +37,7 @@ class FileStorage:
 
     def save(self):
         """
-        serializes __objects to the JSON file (path: __file_path)
+            serializes __objects to the JSON file (path: __file_path)
         """
         to_json = {}
         for key, value in FileStorage.__objects.items():
