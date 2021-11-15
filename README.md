@@ -60,6 +60,8 @@ Deletes an instance based on the class name and id (save the change into the JSO
 
 Prints all string representation of all instances based or not on the class name
 
+Note: All the commands, except *all* need a class name, and a instance id to function and work.
+
 
 
 
