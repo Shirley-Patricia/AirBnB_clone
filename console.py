@@ -50,7 +50,7 @@ class HBNBCommand(cmd.Cmd):
         """
         k = ""
         if not arg:
-                print("** class name missing **")
+            print("** class name missing **")
         else:
             args = arg.split()
             if len(args) > 1:
@@ -109,6 +109,34 @@ class HBNBCommand(cmd.Cmd):
                 if line[0] == k[0]:
                     list_str.append(value.__str__())
             print(list_str)
+
+    def do_update(self, arg):
+        """
+        Updates an instance based on the class
+        name and id by adding or updating attribute
+        """
+        l_args = arg.split()
+        if len(l_args) < 1:
+            print("** class name missing **")
+            return False
+        if l_args[0] in lists:
+            if len(l_args) > 1:
+                k = l_args[0] + "." + l_args[1]
+                if k in storage.all():
+                    if len(l_args) > 2:
+                        if len(l_args) > 3:
+                            setattr(storage.all()[k], l_args[2], l_args[3])
+                            storage.all()[k].save()
+                        else:
+                            print("** value missing **")
+                    else:
+                        print("** attribute name missing **")
+                else:
+                    print("** no instance found **")
+            else:
+                print("** instance id missing **")
+        else:
+            print("** class doesn't exist **")
 
 
 if __name__ == '__main__':
