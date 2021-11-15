@@ -9,7 +9,7 @@ from models.base_model import BaseModel
 class TestState(unittest.TestCase):
     """
     """
-def setUp(self):
+    def setUp(self):
         """creating object"""
         self.My_state = State()
 

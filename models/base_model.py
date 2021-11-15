@@ -7,6 +7,7 @@ Console Python, first part of the AirBnB project
 from datetime import datetime
 from uuid import uuid4
 import models
+
 f = '%Y-%m-%dT%H:%M:%S.%f'
 
 
