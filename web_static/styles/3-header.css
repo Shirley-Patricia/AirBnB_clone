@@ -1,0 +1,13 @@
+header{
+	background-color:#FFF;
+	height:70px;
+	width: 100%;
+	border-bottom: 1px solid #CCCCCC;
+	border-left: 20px;
+}
+div.logo {
+	background-image: url(https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/logo.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-left: 20px;	
+}
