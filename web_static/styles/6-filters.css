@@ -141,6 +141,7 @@ ul.popover{
 	padding-top: 20px;
 	padding-right: 30px;
 	margin: 0;
+	position: relative;
 }
 .locations:hover ul.popover {
 	display: block;
