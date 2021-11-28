@@ -1,8 +1,8 @@
-footer{
+footer p{
 	text-align: center;
-	padding-top: 22px;
+	padding-top: 5px;
 }
-.foot {
+footer {
 	background-color: #FFF;
 	height: 60px;
 	width: 100%;
